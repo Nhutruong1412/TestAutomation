@@ -1,6 +1,5 @@
 package scripts;
 
-import com.sun.xml.internal.bind.v2.model.core.ID;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import library.Home;
 import org.openqa.selenium.By;
@@ -18,21 +17,19 @@ public class CreateAccount {
         Home home = new Home(driver);
         home.AccessToHomePage();
         home.EnterEmail("truonghuynhnhu1412@gmail.com");
-        driver.get("https://demo.guru99.com/v4");
-        String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
-        String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
-        home.Login(ID, PWord);
+
     }
-   /* @Test
+   @Test
     public void Account() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.get("https://demo.guru99.com/v4");
         Home home = new Home(driver);
+       home.AccessToHomePage();
         String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
         String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
         home.Login(ID, PWord);
-    }*/
+    }
 
 }
 

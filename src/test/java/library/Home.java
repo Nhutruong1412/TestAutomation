@@ -19,10 +19,10 @@ public class Home {
     //Locator on the first page
     public By emailField = By.xpath("//input[@type='text']");
     public By submitButton = By.xpath("//input[@type='submit']");
-    /*public By userID = By.xpath("(//td[@align='center'])[3]");
+    public By userID = By.xpath("(//td[@align='center'])[3]");
     String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
     public By passWord = By.xpath("(//td[@align='center'])[5]");
-    String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();*/
+    String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
 
 
     //Locator on the page Login
