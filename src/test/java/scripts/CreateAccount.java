@@ -30,6 +30,7 @@ public class CreateAccount {
         home.EnterEmail("truonghuynhnhu1412@gmail.com");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver,10);
+        driver.get("https://demo.guru99.com/v4");
         String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
         String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
         home.Login(ID, PWord);
