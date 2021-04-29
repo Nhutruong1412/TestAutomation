@@ -25,28 +25,15 @@ public class Home {
     public By emailID = By.xpath("//td[contains(.,'Email ID')]");
     public By emailField = By.xpath("//input[@type='text']");
     public By submitButton = By.xpath("//input[@type='submit']");
-    public By userID = By.xpath("(//td[@align='center'])[3]");
-    String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
-    public By passWord = By.xpath("(//td[@align='center'])[5]");
-    String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
-
 
     //Locator on the page Login
     public By userID_field = By.xpath("//input[@name='uid']");
     public By passWord_field = By.xpath("//input[@name='password']");
 
-    public class ChromeOptions {
-    }
-    public void AccessToHomePage() {
-        driver.findElement(detailButton).click();
-//   WebDriverWait wait = new WebDriverWait(driver,20);
-//    wait.until(ExpectedConditions.visibilityOf((WebElement) proceed_link));
-        driver.findElement(proceedLink).click();
-    }
 
     public void EnterEmail(String strInput) {
-        WebDriverWait wait = new WebDriverWait(driver,20);
-        wait.until(ExpectedConditions.elementToBeClickable(emailID));
+        WebDriverWait wait = new WebDriverWait(driver,10);
+        wait.until(ExpectedConditions.elementToBeClickable(emailField));
         driver.findElement(emailField).click();
         driver.findElement(emailField).sendKeys(strInput);
         driver.findElement(submitButton).click();
