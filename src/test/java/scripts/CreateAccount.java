@@ -6,9 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -28,13 +25,17 @@ public class CreateAccount {
         driver.get("https://demo.guru99.com/");
         Home home = new Home(driver);
         home.EnterEmail("truonghuynhnhu1412@gmail.com");
+        String ID = driver.findElement(By.xpath("//td[contains(text(),'User ID')]/following-sibling::td")).getText();
+        String PWord = driver.findElement(By.xpath("//td[contains(text(),'Password ')]/following-sibling::td")).getText();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver,10);
         driver.get("https://demo.guru99.com/v4");
-        String ID = driver.findElement(By.xpath("(//td[@align='center'])[3]")).getText();
-        String PWord = driver.findElement(By.xpath("(//td[@align='center'])[5]")).getText();
         home.Login(ID, PWord);
 
+
     }
+
+
+
 
 }
